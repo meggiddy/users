@@ -1,8 +1,14 @@
-import { useState } from "react";
-import Swal from 'sweetalert2'
+import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import { useUserContext } from "../UserContext";
 
 function StepBar() {
   const [selected, setSelected] = useState(null);
+  const { role } = useUserContext();
+
+  useEffect(() => {
+    setSelected(role);
+  }, [role]);
 
   const handleClick = (role) => {
     setSelected(role);

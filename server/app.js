@@ -17,7 +17,6 @@ app.use(cookieParser());
 app.use(cors());
 
 app.get("/user", (req, res) => {
-  // Check if the session exists and has a role
     res.json({ role: 'admin' });
 
 });
